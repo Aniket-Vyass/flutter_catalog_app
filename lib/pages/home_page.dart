@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_catalouge/pages/dart_page.dart';
+import 'package:flutter_catalouge/pages/cart_page.dart';
 import 'package:flutter_catalouge/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalouge/widgets/home_widgets/catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';

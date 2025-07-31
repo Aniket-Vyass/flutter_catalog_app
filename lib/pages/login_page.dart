@@ -113,10 +113,6 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 18,
                                     ),
                                   ),
-                          //decoration: BoxDecoration(
-                          // color: Colors.deepPurple,
-                          //shape:
-                          // changeButton ? BoxShape.circle : BoxShape.rectangle,
                         ),
                       ),
                     ),
