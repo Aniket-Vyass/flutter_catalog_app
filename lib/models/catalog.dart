@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:collection/collection.dart';
 
 class CatalogModel {
   static final catModel = CatalogModel._internal();
@@ -10,9 +11,8 @@ class CatalogModel {
   static List<Item> items = [];
 
   // Get Item by ID
-  // ignore: null_closures
-  Item getById(int id) =>
-      items.firstWhere((element) => element.id == id, orElse: null);
+  Item? getById(int id) =>
+      items.firstWhereOrNull((element) => element.id == id);
 
   // Get Item By Position
   Item getByPosition(int pos) => items[pos];

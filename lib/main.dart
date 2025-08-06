@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalouge/core/store.dart';
 import 'package:flutter_catalouge/pages/cart_page.dart';
 import 'package:flutter_catalouge/pages/home_page.dart';
 import 'package:flutter_catalouge/pages/login_page.dart';
 import 'package:flutter_catalouge/utils/routes.dart';
-// ignore: unused_import
-import 'package:flutter_catalouge/widgets/item_widget.dart';
 import 'package:flutter_catalouge/widgets/themes.dart';
-// ignore: unused_import
-import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
+//wrapping MyApp in VxState will give us the power to manage state
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
