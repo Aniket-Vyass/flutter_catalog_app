@@ -1,19 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_import
-// ignore_for_file: unused_import, sort_child_properties_last
+// ignore_for_file, sort_child_properties_last
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_catalouge/pages/cart_page.dart';
 import 'package:flutter_catalouge/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalouge/widgets/home_widgets/catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalouge/models/catalog.dart';
 import 'package:flutter_catalouge/utils/routes.dart';
-import 'package:flutter_catalouge/widgets/drawer.dart';
-import 'package:flutter_catalouge/widgets/item_widget.dart';
-import 'package:flutter_catalouge/widgets/themes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
