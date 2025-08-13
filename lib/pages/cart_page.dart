@@ -35,6 +35,7 @@ class _CartTotal extends StatelessWidget {
           VxBuilder(
             mutations: {RemoveMutation},
             builder: (context, store, status) {
+
               return "\$${_cart.totalPrice}".text
                   .color(context.theme.hintColor)
                   .xl4
@@ -64,21 +65,24 @@ class _CartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    VxState.watch(context, on: [RemoveMutation]);
-    final CartModel _cart = (VxState.store as MyStore).cart;
-    return _cart.items.isEmpty
-        ? "Nothing to show".text.xl3.makeCentered()
-        : ListView.builder(
-          itemCount: _cart.items.length,
-          itemBuilder:
-              (context, index) => ListTile(
-                leading: Icon(Icons.done),
-                trailing: IconButton(
-                  onPressed: () => RemoveMutation(_cart.items[index]).perform(),
-                  icon: Icon(Icons.remove_circle_outline),
+    return VxBuilder(
+      mutations: const {RemoveMutation},
+      builder: (context, store, status) {
+        final CartModel _cart = (store as MyStore).cart;
+        return _cart.items.isEmpty
+            ? "Nothing to show".text.xl3.makeCentered()
+            : ListView.builder(
+                itemCount: _cart.items.length,
+                itemBuilder: (context, index) => ListTile(
+                  leading: const Icon(Icons.done),
+                  trailing: IconButton(
+                    onPressed: () => RemoveMutation(_cart.items[index]).perform(),
+                    icon: const Icon(Icons.remove_circle_outline),
+                  ),
+                  title: _cart.items[index].name.text.make(),
                 ),
-                title: _cart.items[index].name.text.make(),
-              ),
-        );
+              );
+      },
+    );
   }
 }
