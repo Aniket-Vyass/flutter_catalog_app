@@ -25,17 +25,15 @@ class CartPage extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print("Rebuild Happened");
-    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           VxBuilder(
-            mutations: {RemoveMutation},
+            mutations: const {RemoveMutation},
             builder: (context, store, status) {
-
+              final CartModel _cart = (store as MyStore).cart;
               return "\$${_cart.totalPrice}".text
                   .color(context.theme.hintColor)
                   .xl4

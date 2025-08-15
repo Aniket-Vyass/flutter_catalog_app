@@ -15,11 +15,11 @@ class AddToCart extends StatelessWidget {
       mutations: {AddMutation, RemoveMutation},
       builder: (context, store, status) {
         final CartModel _cart = (VxState.store as MyStore).cart;
-        bool isInCart = _cart.items.contains(catalog) ?? false;
+        bool isInCart = _cart.items.contains(catalog);
         return ElevatedButton(
           onPressed: () {
             if (!isInCart) {
-              AddMutation(catalog).perform();
+              AddMutation(catalog);
             }
           },
           style: ButtonStyle(
