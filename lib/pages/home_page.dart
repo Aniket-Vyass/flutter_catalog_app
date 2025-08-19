@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
         productsData.map<Item>((item) => Item.fromMap(item)).toList();
     setState(() {});
   }
+//"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"
 
   @override
   Widget build(BuildContext context) {
